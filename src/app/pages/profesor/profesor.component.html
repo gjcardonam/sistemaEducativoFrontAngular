@@ -1,0 +1,22 @@
+<h1 class="display-1">Lista de Profesores</h1>
+
+<table class="table table-width">
+  <thead>
+    <tr>
+      <th scope="col" class="col-1">#</th>
+      <th scope="col" class="col-7">Nombre</th>
+      <th scope="col" class="col-4">Detalles</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @for (profesor of profesores; track profesor.id) {
+    <tr>
+      <th scope="row" class="col-1">{{ profesor.id }}</th>
+      <td class="col-7">{{ profesor.nombre }}</td>
+      <td class="col-4">
+        <button class="btn btn-primary" [routerLink]="['/profesor', profesor.nombre]">Ver Detalles</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
